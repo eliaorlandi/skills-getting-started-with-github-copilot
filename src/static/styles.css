@@ -1,3 +1,21 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --card-bg: white;
+  --header-bg: #1a237e;
+  --header-text: white;
+  --card-border: #ddd;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --card-bg: #2d2d2d;
+  --header-bg: #2c3591;
+  --header-text: white;
+  --card-border: #444;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,19 +26,19 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: var(--bg-color);
 }
 
 header {
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
-  background-color: #1a237e;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   border-radius: 5px;
 }
 
@@ -42,7 +60,7 @@ main {
 }
 
 section {
-  background-color: white;
+  background-color: var(--card-bg);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -60,9 +78,9 @@ section h3 {
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--card-border);
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: var(--card-bg);
 }
 
 .activity-card h4 {
@@ -166,4 +184,61 @@ footer {
 .participants li {
   margin-bottom: 5px;
   color: #333;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unregister-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.unregister-btn:hover {
+  background-color: #c82333;
+}
+
+[data-theme="dark"] .unregister-btn {
+  background-color: #bd2130;
+}
+
+[data-theme="dark"] .unregister-btn:hover {
+  background-color: #a71d2a;
+}
+
+.signup-btn {
+  background-color: #1a237e;
+  width: 100%;
+}
+
+.signup-btn:hover {
+  background-color: #3949ab;
+}
+
+[data-theme="dark"] .signup-btn {
+  background-color: #2c3591;
+}
+
+[data-theme="dark"] .signup-btn:hover {
+  background-color: #3949ab;
 }
